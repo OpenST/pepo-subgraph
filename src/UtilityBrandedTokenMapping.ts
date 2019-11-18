@@ -1,7 +1,7 @@
 import {
   InternalActorRegistered, Transfer,
-} from "../generated/Contract/UtilityBrandedToken"
-import {InternalActorRegisteredEntity, TransferEntity} from "../generated/UtilityBrandedTokenSchema"
+} from "./generated/Contract/UtilityBrandedToken"
+import {InternalActorRegisteredEntity, TransferEntity} from "./generated/UtilityBrandedTokenSchema"
 
 export function handleInternalActorRegistered(event: InternalActorRegistered): void {
   let entity = new InternalActorRegisteredEntity(

@@ -1,8 +1,8 @@
 # Pepo Subgraph - Index and query Pepo data
 
-## Sync auxiliary chain 1414
+### Sync auxiliary chain 1414
 
-- You need to have web3 RPC endpoint to `mosaic mainnet` auxiliary chain `1414`. You can run a full node by installing [mosaic chains](https://github.com/mosaicdao/mosaic-chains) npm package (in your 
+- You need to have web3 RPC endpoint of mosaic mainnet `auxiliary chain 1414`. You can run a full node by installing [mosaic chains](https://github.com/mosaicdao/mosaic-chains) npm package (in your 
 dev dependencies).
 
 ```
@@ -16,38 +16,44 @@ If you already have `mosaic-chains` installed, go to next step.
 ```
     ./node-modules/.bin/mosaic start 1414 --origin ethereum 
 ```
-Once chain have been successfully started, it will display `web3 endpoint`, `graph admin rpc endpoint`, graph ws endpoint and `ipfs url`. `Please keep a copy of these urls`. These URLs will be needed in 
-further steps.
+Once chain have been successfully started, it will display web3 endpoint, `graph admin rpc endpoint`, graph ws endpoint and `ipfs url`. Please keep a `copy of these endpoints`. These URLs will be 
+needed in further steps.
 
-- You can see the syncing status with below command:
+- Make sure chain 1414 is synced. You can see the syncing status with below command:
 ```
     ./node-modules/.bin/mosaic attach 1414
 ```
 
-## Export environment variables
+### Clone repository
+```
+    git clone git@github.com:ostdotcom/pepo-subgraph.git
+```
+
+### Export environment variables
 
 ```
-export GRAPH_ADMIN_RPC_ENDPOINT=http://localhost:9434/
-export GRAPH_IPFS_ENDPOINT=http://localhost:6415
+    export GRAPH_ADMIN_RPC_ENDPOINT=http://localhost:9434/
+    export GRAPH_IPFS_ENDPOINT=http://localhost:6415
 ```
 Update above values if you are running on different ports.
 
-## Deploy Pepo subgraph
+### Deploy Pepo subgraph
 
 Go to root directory and run below commands one by one:
 ```
-cd pepo-subgraph
-npm install
-npm run create-local
-npm run deploy-local
+    cd pepo-subgraph
+    npm install
+    npm run create-local 
+    npm run deploy-local
 ```
 
-You should see success message when subgraph is deployed. It can take sometime to completely index Pepo entities.
+You should see success message when subgraph is deployed. 
+It can take sometime to completely index Pepo entities.
 
-## Query Pepo data
+### Query Pepo data
 
 - Open [GraphQL editor](http://localhost:11414/subgraphs/name/ostdotcom/pepo-subgraph/graphql) to query indexed entities. 
-- Query Pepo economy internal actors
+- Query Pepo economy `internal actors`:
 ```
 {
   internalActorRegistereds(orderBy: blockNumber, orderDirection: desc, first: 100, skip: 100) {

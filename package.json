@@ -1,0 +1,16 @@
+{
+  "name": "pepo-subgraph",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ ostdotcom/pepo-subgraph",
+    "create-local": "graph create --node $GRAPH_ADMIN_RPC_ENDPOINT ostdotcom/pepo-subgraph",
+    "remove-local": "graph remove --node $GRAPH_ADMIN_RPC_ENDPOINT ostdotcom/pepo-subgraph",
+    "deploy-local": "graph deploy --node $GRAPH_ADMIN_RPC_ENDPOINT --ipfs $GRAPH_IPFS_ENDPOINT ostdotcom/pepo-subgraph"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.16.1",
+    "@graphprotocol/graph-ts": "0.16.0"
+  }
+}

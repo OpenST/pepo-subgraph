@@ -14,14 +14,14 @@ If you already have `mosaic-chains` installed, go to next step.
 - Run below command to start a full node of auxiliary chain 1414 in the background:
 
 ```
-    ./node-modules/.bin/mosaic start 1414 --origin ethereum 
+    ./node_modules/.bin/mosaic start 1414 --origin ethereum 
 ```
 Once chain have been successfully started, it will display web3 endpoint, `graph admin rpc endpoint`, graph ws endpoint and `ipfs url`. Please keep a `copy of these endpoints`. These URLs will be 
 needed in further steps.
 
 - Make sure chain 1414 is synced. You can see the syncing status with below command:
 ```
-    ./node-modules/.bin/mosaic attach 1414
+    ./node_modules/.bin/mosaic attach 1414
 ```
 
 ### Clone repository

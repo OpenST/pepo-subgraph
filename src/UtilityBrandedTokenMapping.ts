@@ -1,10 +1,10 @@
 import {
   InternalActorRegistered, Transfer,
 } from "./generated/Contract/UtilityBrandedToken"
-import {InternalActorRegisteredEntity, TransferEntity} from "./generated/UtilityBrandedTokenSchema"
+import {RegisteredInternalActorEntity, TransferEntity} from "./generated/UtilityBrandedTokenSchema"
 
-export function handleInternalActorRegistered(event: InternalActorRegistered): void {
-  let entity = new InternalActorRegisteredEntity(
+export function handleRegisteredInternalActor(event: InternalActorRegistered): void {
+  let entity = new RegisteredInternalActorEntity(
     event.transaction.hash.toHex() + "-" + event.logIndex.toString()
   )
   entity.actor = event.params._actor

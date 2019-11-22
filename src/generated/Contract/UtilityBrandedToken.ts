@@ -13,7 +13,6 @@ import {
   Address,
   BigInt,
   CallResult,
-  DataSourceTemplate
 } from "@graphprotocol/graph-ts";
 
 export class InternalActorRegistered extends EthereumEvent {
@@ -50,9 +49,6 @@ export class CoGatewaySet__Params {
   get _coGateway(): Address {
     return this._event.parameters[0].value.toAddress();
   }
-}
-
-export class TokenHolderDataSource extends DataSourceTemplate {
 }
 
 export class Transfer extends EthereumEvent  {

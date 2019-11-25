@@ -42,7 +42,7 @@ Update above values if you are running on different ports.
 Go to root directory and run below commands one by one:
 ```
     cd pepo-subgraph
-    npm install
+    npm ci
     npm run create-local 
     npm run deploy-local
 ```
@@ -53,17 +53,6 @@ It can take sometime to completely index Pepo entities.
 ### Query Pepo data
 
 - Open [GraphQL editor](http://localhost:11414/subgraphs/name/ostdotcom/pepo-subgraph/graphql) to query indexed entities. 
-- Query Pepo economy `internal actors`:
-```
-{
-  internalActorRegistereds(orderBy: blockNumber, orderDirection: desc, first: 100, skip: 100) {
-    id
-    actor
-    blockNumber
-    timestamp
-  }
-}
-```
 - Query `Transfers`
 ```
 {
@@ -77,6 +66,18 @@ It can take sometime to completely index Pepo entities.
   }
 }
 ```
+- Query Pepo economy `registered internal actors`:
+```
+{
+  registeredInternalActors(orderBy: blockNumber, orderDirection: desc, first: 100, skip: 100) {
+    id
+    actor
+    blockNumber
+    timestamp
+  }
+}
+```
+
 
 For more query options please visit [GraphQL documentation](https://graphql.org/learn/queries/).
  

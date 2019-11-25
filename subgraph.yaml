@@ -13,14 +13,14 @@ dataSources:
       apiVersion: 0.0.3
       language: wasm/assemblyscript
       entities:
-        - InternalActorRegistered
+        - RegisteredInternalActor
         - Transfer
       abis:
         - name: UtilityBrandedToken
           file: ./abis/0.10.0/UtilityBrandedToken.json
       eventHandlers:
         - event: 'InternalActorRegistered(address)'
-          handler: handleInternalActorRegistered
+          handler: handleRegisteredInternalActor
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
       file: ./src/UtilityBrandedTokenMapping.ts

@@ -1,4 +1,4 @@
-type InternalActorRegistered @entity {
+type RegisteredInternalActor @entity {
   id: ID!
   actor: Bytes! # address
   blockNumber: BigInt! # uint256

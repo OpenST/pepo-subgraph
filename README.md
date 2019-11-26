@@ -40,11 +40,21 @@ Update above values if you are running on different ports.
 ### Deploy Pepo subgraph
 
 Go to root directory and run below commands one by one:
+- Install packages
 ```
     cd pepo-subgraph
     npm ci
-    npm run create-local 
-    npm run deploy-local
+```
+
+- Remove subgraph if you have already deployed and there is schema change
+```
+    npm run remove-local
+```
+
+- Deploy subgraph
+```
+     npm run create-local 
+     npm run deploy-local
 ```
 
 You should see success message when subgraph is deployed. 

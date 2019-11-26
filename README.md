@@ -79,7 +79,7 @@ It can take sometime to completely index Pepo entities.
 - Query Pepo economy `registered internal actors`:
 ```
 {
-  registeredInternalActors(orderBy: blockNumber, orderDirection: desc, first: 100, skip: 100) {
+  registeredInternalActors(orderBy: blockNumber, orderDirection: desc, first: 100, skip: 0) {
     id
     actor
     blockNumber
